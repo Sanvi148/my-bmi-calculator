@@ -44,12 +44,12 @@ function BmiForm({onCalculate}){
     e.preventDefault();
     if(height && weight && name)
     {
-      const heightinmeters=(parseFloat(height* .3048)).toFixed(1);
+      const heightinmeters=parseFloat(height* .3048);
       const bmi=(weight/(heightinmeters*heightinmeters)).toFixed(1);
       onCalculate({
         name,
-        height:(parseFloat(height* .3048)).toFixed(1),
-        weight:(parseFloat(weight* .3048)).toFixed(1),
+        height:parseFloat(height* .3048),
+        weight:parseFloat(weight),//kg
         bmi:parseFloat(bmi)
       })
       setname("")
